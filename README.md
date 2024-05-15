@@ -26,7 +26,7 @@ bash setup-kubernetes-goat.sh
 
 Após alguns minutos, damos o comando `kubectl get pods`, com todos os pods no ar, rodaremos um comando para acessar o ambiente, expondo os serviços:
 ``` bash
-bach access-kubernetes-goat.sh
+bash access-kubernetes-goat.sh
 ```
 
 Acessando `http://127.0.0.1:1234` podemos ver a tela inicial da ferramenta com os desafios.
