@@ -63,8 +63,11 @@ Caso seja necessário manter o service como nodeport, é recomendado adicionar r
 **"DoS the Memory/CPU resources"**
 
 Disponibilidade é uma das tríades da [CIA](https://www.institutedata.com/blog/cia-in-cyber-security/#:~:text=Availability%2C%20the%20final%20component%20of,backups%20to%20prevent%20data%20loss.). Um dos principais problemas resolvidos pelo Kubernetes é o gerenciamento de recursos como auto-scaling, implementações, etc. Nesse cenário, veremos como os invasores podem aproveitar e obter acesso a mais recursos ou causar impacto na disponibilidade dos recursos executando o DoS (Denial of Service) se não houvesse configurações de gerenciamento de recursos implementadas nos recursos do cluster, como solicitações e limites de memória e CPU.
+
 Caso não haja [especificação de recursos](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) nos manifestos do Kubernetes e nenhum intervalo de limites aplicado aos contêineres. Como invasor, podemos consumir todos os recursos onde o pod/implantação está em execução e privar outros recursos e causar um DoS para o ambiente.
+
 Para iniciar esse cenário, acessamos `http://127.0.0.1:1236/`
+
 Este pod não definiu nenhum limite de recursos nos manifestos do Kubernetes. Assim, podemos realizar facilmente uma série de operações que podem consumir mais recursos, podemos utilizar ferramentas simples, como `stress-ng` para sobrecasrregar os recursos, podendo assim derrumar serviços.
 
 Observação:
